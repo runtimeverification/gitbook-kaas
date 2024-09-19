@@ -1,4 +1,4 @@
-# Login Guide
+# Authentification Using Device Flow
 
 ### **Login**
 

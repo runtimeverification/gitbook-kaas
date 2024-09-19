@@ -8,10 +8,10 @@
 ## Guides
 
 * [Getting started](guides/getting-started.md)
-* [Set up CI](guides/set-up-ci.md)
-* [Login Guide](guides/login-guide.md)
+* [Using KaaS CLI](guides/using-kaas-cli.md)
+* [Authentification Using Device Flow](guides/authentification-using-device-flow.md)
+* [Authentication Using Environment Variables](guides/authentication-using-environment-variables.md)
 * [Versions](guides/versions.md)
-* [Share access](guides/share-access.md)
 
 ## 🔗 Links
 

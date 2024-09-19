@@ -1,4 +1,4 @@
-# Set up CI
+# Using KaaS CLI
 
 This guide will walk you through setting up your CI to upload and download proofs using the **`kaas-cli`** tool.
 

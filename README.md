@@ -10,4 +10,6 @@ Introducing **KaaS** (**K** as a Service), a cloud-based solution designed to en
 
 For data management, **KaaS** employs [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html), offering reliable and secure storage. User access is protected through [JWT tokens](https://en.wikipedia.org/wiki/JSON\_Web\_Token) and unique project keys, ensuring your data's safety. Additionally, **KaaS** provides a robust Command Line Interface (CLI) with commands for efficient cache management and user sessions.
 
+Cloud Compute: KaaS takes advantage of cloud computing to provide scalable and efficient remote computation. This allows users to offload heavy computational tasks to the cloud. The integration with cloud computing services makes KaaS a powerful tool for large-scale computations with the K framework.
+
 With **KaaS**, our vision is to make the **K** framework more accessible to users, serving as the perfect entry point for anyone looking to leverage the power of the **K** framework
