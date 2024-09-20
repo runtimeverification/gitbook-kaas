@@ -34,3 +34,5 @@ If the installation is successful, you should see the message `Hello stranger!`&
 
 For detailed guidance on using `kaas-cli`, refer to the [CLI documentation](https://github.com/runtimeverification/kaas/blob/develop/kaas-cli/README.md) on GitHub. Use `kaas-cli --help` to list all commands. For live feedback when using the web interface, use the **Feedback** button located on the right side of the screen. Contact us via our official Telegram or Discord channels for support or inquiries.
 
+
+
