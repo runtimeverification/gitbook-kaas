@@ -14,7 +14,7 @@ To list your vaults you will run the following command:
 kaas-cli list-vaults
 ```
 
-The output will include your `Vaults`, which will be the `id` value. Your `vault key` will be provided separately and it is important to keep that secure.
+The output will include your `Vaults`, which will be the `name` value. Your `vault key` will be provided separately and it is important to keep that secure.
 
 To obtain a token use `Vault ID` from previous step&#x20;
 
