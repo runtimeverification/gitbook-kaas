@@ -44,7 +44,7 @@ This guide will help you navigate through the initial setup process, including s
 
    ## After first login
 
-   Follow the brief tutorial video on how to add an organization using the Github integration feature.
+   [Follow the brief tutorial video on how to add an organization using the Github integration feature](https://app.screencast.com/JpRDbeTHhgRqs).
    Or
    Keep reading to learn how to add an organization.
 
@@ -75,10 +75,9 @@ This guide will help you navigate through the initial setup process, including s
    ![Add Vault Page](/.gitbook/assets/AddVaultPage.png)  
    *Screenshot of the "Add Vault" page with options for selecting a repository.*
 
-3. **Finalize and Save:**
+3. **Adding a New Vault (Github repository source):**
 
-   Review your Organization Vaults list.
-   You should now see your new vault in the list.
+   [Watch video tutorial on adding a new Vault and running Compute](https://app.screencast.com/w6Bh2tD4hvu4E?conversation=0aH8uwLDOsd8oN6IOKp1I5)
 
 ## Questions?
 
