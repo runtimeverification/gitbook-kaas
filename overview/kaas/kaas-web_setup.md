@@ -44,8 +44,7 @@ This guide will help you navigate through the initial setup process, including s
 
    ## After first login
 
-   Follow the brief tutorial video on how to add an organization using the Github integration feature
-   {% embed url="https://app.screencast.com/JpRDbeTHhgRqs" %}  
+   [Follow the brief tutorial video on how to add an organization using the Github integration feature](https://app.screencast.com/JpRDbeTHhgRqs).  
    Or  
    Keep reading to learn how to add an organization.
 
@@ -78,8 +77,7 @@ This guide will help you navigate through the initial setup process, including s
 
 3. **Adding a New Vault (Github repository source):**
 
-   ### Watch video tutorial on adding a new Vault and running Compute
-   {% embed url="https://app.screencast.com/w6Bh2tD4hvu4E?conversation=0aH8uwLDOsd8oN6IOKp1I5" %}
+   [Watch video tutorial on adding a new Vault and running Compute](https://app.screencast.com/w6Bh2tD4hvu4E?conversation=0aH8uwLDOsd8oN6IOKp1I5)
 
 ## Questions?
 
