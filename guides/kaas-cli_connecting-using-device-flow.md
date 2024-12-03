@@ -1,8 +1,8 @@
-# Authentification Using Device Flow
+# Authentification kaas-cli Using Device Flow
 
 ### **Login**
 
-To login run the following command:&#x20;
+To login, run the following command:&#x20;
 
 ```
 kaas-cli login

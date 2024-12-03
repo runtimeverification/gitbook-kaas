@@ -35,12 +35,24 @@ This guide will help you navigate through the initial setup process, including s
    Use your credentials to log in to the KaaS web app.
 
 2. **Navigate to Organizations:**
+   On first login you will be presented with a blank canvas. 
 
-   Once logged in, go to the **Organizations** section from the main menu.
+   ![Blank Canvas](/.gitbook/assets/BlankCanvas.png)
 
+   If someone in your github organization has already imported an organization from Github you are part of.
+   It will be listed on login.
+
+   ## After first login
+
+   Follow the brief tutorial video on how to add an organization using the Github integration feature. 
+   Or
+   Keep reading to learn how to add an organization.
+
+   **NOTE: It is required to use Github integration for remote compute execution.**
+   
 3. **Create a New Organization:**
 
-   - Click on the **Add Organization** button.
+   - Click on the **Add Organization** button. Top Right of the screen.
    - Enter the name and description of your organization.
    - Submit the form to create your organization.
 
