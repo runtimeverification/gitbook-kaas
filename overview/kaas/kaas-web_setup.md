@@ -49,7 +49,7 @@ This guide will help you navigate through the initial setup process, including s
    Keep reading to learn how to add an organization.
 
    **NOTE: It is required to use Github integration for remote compute execution.**
-   
+
 3. **Create a New Organization:**
 
    - Click on the **Add Organization** button. Top Right of the screen.
