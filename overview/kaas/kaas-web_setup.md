@@ -44,11 +44,11 @@ This guide will help you navigate through the initial setup process, including s
 
    ## After first login
 
-   Follow the brief tutorial video on how to add an organization using the Github integration feature. 
+   Follow the brief tutorial video on how to add an organization using the Github integration feature.
    Or
    Keep reading to learn how to add an organization.
 
-   **NOTE: It is required to use Github integration for remote compute execution.**
+   *NOTE: It is required to use Github integration for remote compute execution.*
 
 3. **Create a New Organization:**
 
