@@ -3,15 +3,15 @@
 ## Overview
 
 * [KaaS](README.md)
-  * [Installation](overview/kaas/installation.md)
+  * [KaaS Organization Setup](/overview/kaas/kaas-web_setup.md)
+  * [KaaS CLI Installation](/overview/kaas/kaas-cli_installation.md)
 
 ## Guides
 
-* [Getting started](guides/getting-started.md)
-* [Using KaaS CLI](guides/using-kaas-cli.md)
-* [Authentification Using Device Flow](guides/authentification-using-device-flow.md)
-* [Authentication Using Environment Variables](guides/authentication-using-environment-variables.md)
-* [Versions](guides/versions.md)
+* [Using KaaS CLI](/guides/kaas-cli_connecting-using-tokens.md)
+* [Authentification Using Device Flow](/guides/kaas-cli_connecting-using-device-flow.md)
+* [Using KaaS in CI](/guides/kaas_setting-up-ci.md)
+* [KCFG Tagging Tutorial](/guides/kaas-cli_tagging-best-practices.md)
 
 ## 🔗 Links
 
