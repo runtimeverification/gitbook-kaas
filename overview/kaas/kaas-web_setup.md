@@ -50,6 +50,8 @@ This guide will help you navigate through the initial setup process, including s
    
    <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/JpRDbeTHhgRqs/e' allowfullscreen></iframe>  
 
+   {% embed url="https://app.screencast.com/JpRDbeTHhgRqs/e" %}
+
    **Additional Notes on Github Connected Organizations:**
    - Github integration is required for remote compute execution.
    - Github integration is NOT required for storing kcfgs to a vault.
@@ -82,10 +84,11 @@ This guide will help you navigate through the initial setup process, including s
    *Screenshot of the Connect Vault Icon.*  
    <br>
    <br>
-   **Troubleshooting Github Repo not showing:**
+
+   **Troubleshooting Github Repo not showing:**  
+
    - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
     ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
-
 
 
 3. **Adding a New Vault by Connecting a Github Repository:**
@@ -93,6 +96,13 @@ This guide will help you navigate through the initial setup process, including s
    A Tutorial on adding a new Github Connected Repository as a KaaS Vault and running a Kontrol Compute Job
    
    <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/w6Bh2tD4hvu4E/e' allowfullscreen></iframe>
+
+
+   **Adding a Non Github Connected Vault:**  
+   - From Organization > Vault Tab
+   - Click **Create Vault**
+   - Enter a Name. It must start with '@'
+   - Click **Create** button.  
 
 ## Questions?
 
