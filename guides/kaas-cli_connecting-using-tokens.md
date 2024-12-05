@@ -29,6 +29,7 @@ Providing token allows you to skip authentication flow and have same level of ac
      * Refered to as Vault Spec: `organisation-name/vault-name`
 3. **Use the Token**:
    * Replace `xxx` with your actual token from previous steps.
+   * Replace `organisation-name/vault-name` with names from the previous step
    * Replace `tag` - with short identifier
    *   Use the following command for uploading:
 

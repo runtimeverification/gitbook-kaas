@@ -37,7 +37,7 @@
         - name: "Install KaaS"
           uses: runtimeverification/install-kaas@v0.2.1
 
-        # This mode will run proofs on Runtime Verification Servers using dedicated hardare built for proof execution.
+        # This mode will run proofs on Runtime Verification Servers using dedicated hardware built for proof execution.
         # A kontrol.toml and foundry.tom file are still requried to be present in the root of the test directory.
         # Github App installation of "KaaS Storage & Compute" is required to use this mode to support access to test source code.
         - name: 'Run KaaS in Remote Mode'
@@ -47,7 +47,7 @@
 
         # This is the default mode, and will run the proofs in a containerized environment. Depends on DOCKER being installed and will fail if it is not.
         # A kontrol.toml and foundry.tom file are still requried to be present in the root of the test directory.
-        # Logs and output are stramed to stdout, and saved to file on completion. Any kcfg data produced is pulled back to the host at the test root (where kontrol.toml is defined).
+        # Logs and output are streamed to stdout, and saved to file on completion. Any kcfg data produced is pulled back to the host at the test root (where kontrol.toml is defined).
         - name: 'Run KaaS in Container Mode'
           shell: bash
           run: |

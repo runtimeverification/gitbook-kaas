@@ -42,7 +42,7 @@ This guide will help you navigate through the initial setup process, including s
    If someone in your github organization has already imported an organization from Github you are part of.
    It will be listed on login.
 
-   ## After first login
+### After first login
 
    [Follow the brief tutorial video on how to add an organization using the Github integration feature](https://app.screencast.com/JpRDbeTHhgRqs).  
    Or  
