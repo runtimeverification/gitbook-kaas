@@ -1,6 +1,6 @@
 # Using KaaS CLI
 
-This guide will walk you through updating  setting up your CI to upload and download proofs using the **`kaas-cli`** tool.
+This guide will walk you through setting up your CI to upload and download proofs using the **`kaas-cli`** tool.
 
 Once set up in your CI pipeline, new proofs will be uploaded automatically with each build, and the latest set of proofs will be downloaded for use in your verification jobs.
 

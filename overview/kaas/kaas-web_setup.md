@@ -44,46 +44,65 @@ This guide will help you navigate through the initial setup process, including s
 
 ### After first login
 
-   [Follow the brief tutorial video on how to add an organization using the Github integration feature](https://app.screencast.com/JpRDbeTHhgRqs).  
-   Or  
-   Keep reading to learn how to add an organization.
+   #### Add a Github Connected Organization.
 
-   *NOTE: It is required to use Github integration for remote compute execution.*
+   Watch a brief tutorial video adding an organization using the Github integration feature.  
+   
+   <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/JpRDbeTHhgRqs/e' allowfullscreen></iframe>  
 
-3. **Create a New Organization:**
+   **Additional Notes on Github Connected Organizations:**
+   - Github integration is required for remote compute execution.
+   - Github integration is NOT required for storing kcfgs to a vault.
+   - When selecting 'Add Organization' if your organization does not show up within a few seconds, Click "Install Github App" and make sure the app is installed for the organization.
+   - If your repository is not showing up in the list of repositories, Check the to baner message and follow the instructions.
 
-   - Click on the **Add Organization** button. Top Right of the screen.
-   - Enter the name and description of your organization.
-   - Submit the form to create your organization.
+   **Troubleshooting Github Repo not showing:**
+   - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
+    ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
 
-   ![Create Organization Form](/.gitbook/assets/GHApp_Setup_Run_Compute.mp4)  
-   *A video showing how to add an organization using the Github integration feature. And running a compute job.*
+   #### Create a Non Github Organization:
+
+   - Click on the **Create New Organization** button. Top Right of screen.
+   - Enter the name of your organization. Must Start with '@'
+   - Click **Create**
 
 ## Step 3: Set Up Your First Vault
 
 1. **Access the Vaults Tab:**
 
-   Click on an Organization. Navigate to the **Vaults** tab.
+   Click on an Organization. Navigate to the **Vaults** tab.  
    ![Vaults Tab](/.gitbook/assets/VaultsTab.png)   
    *Screenshot of the Vaults tab.*
-2. **Create a New Vault:**
 
-   - Click on the **Connect Vault** button. (When using GH App Integration)
-   - Select the repository you want to use for the vault. And click **Connect Icon**.
-   ![Connect Vault Icon](/.gitbook/assets/ConnectVaultIcon.png)
+2. **Connect a Github Repository as a KaaS Vault:**
 
-   ![Add Vault Page](/.gitbook/assets/AddVaultPage.png)  
-   *Screenshot of the "Add Vault" page with options for selecting a repository.*
+   - Click on the **Connect Vault** button.
+   - Select the repository you want to use for the vault. And click **Connect Icon**.  
+   ![Connect Vault Icon](/.gitbook/assets/ConnectVaultIcon.png)  
+   *Screenshot of the Connect Vault Icon.*  
+   <br>
+   <br>
+   **Troubleshooting Github Repo not showing:**
+   - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
+    ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
 
-3. **Adding a New Vault (Github repository source):**
 
-   [Watch video tutorial on adding a new Vault and running Compute](https://app.screencast.com/w6Bh2tD4hvu4E?conversation=0aH8uwLDOsd8oN6IOKp1I5)
+
+3. **Adding a New Vault by Connecting a Github Repository:**
+
+   A Tutorial on adding a new Github Connected Repository as a KaaS Vault and running a Kontrol Compute Job
+   
+   <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/w6Bh2tD4hvu4E/e' allowfullscreen></iframe>
 
 ## Questions?
 
 If you have any questions or need further assistance, please refer to our support documentation or contact our support team.
-[contact@runtimeverification.com](mailto:contact@runtimeverification.com)
+[contact@runtimeverification.com](mailto:contact@runtimeverification.com)  
+[Join our Discord](https://discord.gg/UBq4J8NE)  
+[Find us on Twitter](https://twitter.com/rv_inc)  
+
 
 # Next Steps
+[Tagging Best Practices](/guides/tagging-best-practices.md)
 
 You are now ready to start using KaaS to manage your projects efficiently. If you have any questions or need further assistance, please refer to our support documentation or contact our support team.

@@ -25,21 +25,21 @@ Providing token allows you to skip authentication flow and have same level of ac
    * Go to the [KaaS dashboard](https://kaas.runtimeverification.com/app).
    * Click the desired organization.
    * And click on a Vault.
-   * Copy the vault name with organisation name. It has format:
-     * Refered to as Vault Spec: `organisation-name/vault-name`
+   * Copy the vault name with organization name. It has format:
+     * Refered to as Vault Spec: `organization-name/vault-name`
 3. **Use the Token**:
    * Replace `xxx` with your actual token from previous steps.
-   * Replace `organisation-name/vault-name` with names from the previous step
+   * Replace `organization-name/vault-name` with names from the previous step
    * Replace `tag` - with short identifier
    *   Use the following command for uploading:
 
        ```bash
-           kaas-cli upload organisation-name/vault-name:tag --token xxx
+           kaas-cli upload organization-name/vault-name:tag --token xxx
        ```
    *   For downloading, use:
 
        ```bash
-       kaas-cli download organisation-name/vault-name:tag --token xxx
+       kaas-cli download organization-name/vault-name:tag --token xxx
        ```
 
 
@@ -60,7 +60,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     * `KAAS_SERVER_URL`: The URL of the KaaS server (for development and testing).
     * `KAAS_DIRECTORY`: The directory path for KaaS configurations. Default is `/out`.
-    * `KAAS_KEY`: The key for accessing KaaS services. Can be obtained [here](https://kaas.runtimeverification.com/app/profile/keys).
+    * `KAAS_KEY`: The Token for accessing KaaS services. Can be obtained [here](https://kaas.runtimeverification.com/app/profile/keys).
     * `KAAS_ORG_VAULT`: The organization vault identifier for KaaS in the format `orgname/vaultname`.
 
     **Example:**
@@ -69,7 +69,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```powershell
     setx KAAS_DIRECTORY "your_directory"
-    setx KAAS_KEY "your_key"
+    setx KAAS_KEY "your_token"
     setx KAAS_ORG_VAULT "your_org_vault"
     ```
 
@@ -77,7 +77,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```bash
     export KAAS_DIRECTORY="your_directory"
-    export KAAS_KEY="your_key"
+    export KAAS_KEY="your_token"
     export KAAS_ORG_VAULT="your_org_vault"
     ```
 2.  **Using Environment Variables in the CLI Tool:**
