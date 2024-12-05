@@ -97,6 +97,7 @@ This guide will help you navigate through the initial setup process, including s
    
    <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/w6Bh2tD4hvu4E/e' allowfullscreen></iframe>
 
+   {% embed url="https://app.screencast.com/w6Bh2tD4hvu4E/e" %}
 
    **Adding a Non Github Connected Vault:**  
    - From Organization > Vault Tab
