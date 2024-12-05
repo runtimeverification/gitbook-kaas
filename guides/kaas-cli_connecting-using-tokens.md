@@ -21,7 +21,7 @@ Providing token allows you to skip authentication flow and have same level of ac
    * Click on `Profile` picture in right top corner
    * Click on the `Access Tokens` button in the drop-down menu.
    * Create a new token and copy the `Key`.
-2. **Obtain Organisation Name and Vault Name:**
+2. **Obtain Organization Name and Vault Name:**
    * Go to the [KaaS dashboard](https://kaas.runtimeverification.com/app).
    * Click the desired organization.
    * And click on a Vault.
