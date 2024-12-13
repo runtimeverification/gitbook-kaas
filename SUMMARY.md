@@ -10,6 +10,7 @@
 
 * [Using KaaS CLI](/guides/kaas-cli_connecting-using-tokens.md)
 * [Authentification Using Device Flow](/guides/kaas-cli_connecting-using-device-flow.md)
+* [`run` Command Documentation](/guides/kaas-cli_run_command.md)
 * [Using KaaS in CI](/guides/kaas_setting-up-ci.md)
 * [KCFG Tagging Tutorial](/guides/kaas-cli_tagging-best-practices.md)
 
