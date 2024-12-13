@@ -60,7 +60,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     * `KAAS_SERVER_URL`: The URL of the KaaS server (for development and testing).
     * `KAAS_DIRECTORY`: The directory path for KaaS configurations. Default is `/out`.
-    * `KAAS_KEY`: The Token for accessing KaaS services. Can be obtained [here](https://kaas.runtimeverification.com/app/profile/keys).
+    * `KAAS_TOKEN`: The Token for accessing KaaS services. Can be obtained [here](https://kaas.runtimeverification.com/app/profile/keys).
     * `KAAS_ORG_VAULT`: The organization vault identifier for KaaS in the format `orgname/vaultname`.
 
     **Example:**
@@ -69,7 +69,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```powershell
     setx KAAS_DIRECTORY "your_directory"
-    setx KAAS_KEY "your_token"
+    setx KAAS_TOKEN "your_token"
     setx KAAS_ORG_VAULT "your_org_vault"
     ```
 
@@ -77,12 +77,12 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```bash
     export KAAS_DIRECTORY="your_directory"
-    export KAAS_KEY="your_token"
+    export KAAS_TOKEN="your_token"
     export KAAS_ORG_VAULT="your_org_vault"
     ```
 2.  **Using Environment Variables in the CLI Tool:**
 
-    The CLI tool will automatically read the values of `KAAS_SERVER_URL`, `KAAS_DIRECTORY`, `KAAS_KEY`, and `KAAS_ORG_VAULT` from the environment variables. You do not need to pass these values explicitly each time you run a command.
+    The CLI tool will automatically read the values of `KAAS_SERVER_URL`, `KAAS_DIRECTORY`, `KAAS_TOKEN`, and `KAAS_ORG_VAULT` from the environment variables. You do not need to pass these values explicitly each time you run a command.
 
     **Example Command:**
 
@@ -99,7 +99,7 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```powershell
     echo %KAAS_DIRECTORY%
-    echo %KAAS_KEY%
+    echo %KAAS_TOKEN%
     echo %KAAS_ORG_VAULT%
     ```
 
@@ -107,6 +107,6 @@ To simplify the authentication process, the KaaS CLI tool allows using environme
 
     ```bash
     echo $KAAS_DIRECTORY
-    echo $KAAS_KEY
+    echo $KAAS_TOKEN
     echo $KAAS_ORG_VAULT
     ```
