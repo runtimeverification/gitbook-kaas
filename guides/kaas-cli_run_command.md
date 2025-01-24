@@ -5,13 +5,13 @@ The `kaas-cli run` command executes Kontrol proofs either locally, within a Dock
 
 ## **Requirements:**
 To run your tests you will need:
+- For remote runs you must have a valid internet connection and license with the KaaS online platform at [more info on the website.](https://kaas.runtimeverification.com)
+OR
 - Kontrol must be installed locally. See [Kontrol documentation](https://docs.runtimeverification.com/kontrol/overview/readme/installations) for installation instructions.
 OR 
 - Docker must be installed locally. See [Docker documentation](https://docs.docker.com/get-docker/) for installation instructions.
-OR
-- For remote runs you must have a valid internet connection and license with the KaaS online platform at [more info on the website.](https://kaas.runtimeverification.com)
 
-- You must have a minimum a `foundry.toml` file at the root of you TEST directory.
+- You must have at minimum a `foundry.toml` file at the root of you TEST directory.
 - A `kontrol.toml` file is optional, but if present, it will be used to run the tests using specific configuraiton options passed to kontrol. 
   - `kontrol.toml` is a kontrol specific configuration file that can be used to specify additional options for the proof run, and manage what kontrol does or does not do.
 
@@ -25,6 +25,13 @@ If no foundry.toml file is present, it will exit.
 If a kontrol.toml file is present, it will be used to run the tests using specific configuraiton options passed to kontrol. 
 
 If your execution directory for tests are within a subdirectory, either `cd` to that directory or use the `--test-root` flag to specify the path to the tests.
+
+**Key Environment Variables:**
+- `FOUNDRY_PROFILE`:   
+   Set the preferred profile for your kontrol tests.  
+   Example: `export FOUNDRY_PROFILE=kprove`  
+   
+   Otherwise, the default profile will be used. And if no 'out' definition is provided here kaas-cli will fallback to using 'out' for dumping all kcfg proof files. 
 
 **Key Options:**
 
