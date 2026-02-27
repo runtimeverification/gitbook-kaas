@@ -29,6 +29,10 @@ or:
 
 `sudo pip install kaas-cli`
 
+for uv use 
+
+`uv pip install kaas-cli`
+
 ### Test installation
 
 To make sure everything is installed run
