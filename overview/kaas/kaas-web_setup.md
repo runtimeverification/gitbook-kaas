@@ -39,14 +39,14 @@ This guide will help you navigate through the initial setup process, including s
 
    ![Blank Canvas](/.gitbook/assets/BlankCanvas.png)
 
-   If someone in your github organization has already imported an organization from Github you are part of.
-   It will be listed on login.
+   If someone in your Github organization has already installed the ["Runtime Verification Inc." Github app](https://github.com/apps/runtime-verification-inc) to your organization.
+   It will already be listed on login.
 
 ### After first login
 
    #### Add a Github Connected Organization.
 
-   Watch a brief tutorial video adding an organization using the Github integration feature.  
+   Watch a brief tutorial video adding an organization using the Github App integration feature.  
    
    <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/JpRDbeTHhgRqs/e' allowfullscreen></iframe>  
 
@@ -58,9 +58,12 @@ This guide will help you navigate through the initial setup process, including s
    - When selecting 'Add Organization' if your organization does not show up within a few seconds, Click "Install Github App" and make sure the app is installed for the organization.
    - If your repository is not showing up in the list of repositories, Check the to baner message and follow the instructions.
 
-   **Troubleshooting Github Repo not showing:**
-   - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
-    ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
+   **Troubleshooting Github Organization not showing:**
+   - If your organization is not showing on your hompage go back to 'Add Organization'
+     - From the Homepage. Click on 'Import from Github'. Top Right Corner of screen.
+     - Find your organization in the list and click on the link icon to the left of your organization name.
+        ![Link Organization](/.gitbook/assets/KaaS_Link_Organization_Icon.png)  
+        *Screenshot of the Link Organization Icon.*
 
    #### Create a Non Github Organization:
 
@@ -78,14 +81,16 @@ This guide will help you navigate through the initial setup process, including s
 
 2. **Connect a Github Repository as a KaaS Vault:**
 
-   - Click on the **Connect Vault** button.
-   - Select the repository you want to use for the vault. And click **Connect Icon**.  
+   - Click on the **Connect Vault** button.  
+   ![Connect Vault Button](/.gitbook/assets/KaaS_Connect_Vault_Button.png)  
+   *Screenshot of the Connect Vault Button Found under the Vaults Tab.*
+   - Select the repository you want to Connect a Vault to. And click link **Connect Icon**.  
    ![Connect Vault Icon](/.gitbook/assets/ConnectVaultIcon.png)  
    *Screenshot of the Connect Vault Icon.*  
    <br>
    <br>
 
-   **Troubleshooting Github Repo not showing:**  
+   **Troubleshooting Github Repo not showing in Organization List:**  
 
    - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
     ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
