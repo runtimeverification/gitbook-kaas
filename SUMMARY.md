@@ -1,9 +1,11 @@
-# Table of contents
+# Table of contents (legacy)
+
+> **Note:** This file was used by GitBook. The published site navigation is defined in [`_data/nav.yml`](_data/nav.yml).
 
 ## Overview
 
 * [KaaS](README.md)
-  * [KaaS Organization Setup](/overview/kaas/kaas-web_setup.md)
+  * [Organizations, Vaults & GitHub App](/overview/kaas/kaas-web_setup.md)
   * [KaaS CLI Installation](/overview/kaas/kaas-cli_installation.md)
 
 ## Guides

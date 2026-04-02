@@ -1,0 +1,36 @@
+- title: Overview
+  items:
+    - title: KaaS (home)
+      url: /
+    - title: Organizations, Vaults & GitHub App
+      url: /overview/kaas/kaas-web_setup/
+    - title: KaaS CLI Installation
+      url: /overview/kaas/kaas-cli_installation/
+
+- title: Guides
+  items:
+    - title: Using KaaS CLI (tokens)
+      url: /guides/kaas-cli_connecting-using-tokens/
+    - title: Authentication (device flow)
+      url: /guides/kaas-cli_connecting-using-device-flow/
+    - title: "`run` command"
+      url: /guides/kaas-cli_run_command/
+    - title: Remote fuzzing
+      url: /guides/kaas-cli_remote_fuzzing/
+    - title: AI agent setup
+      url: /guides/kaas-ai-agent-setup/
+    - title: KaaS in CI
+      url: /guides/kaas_setting-up-ci/
+    - title: KCFG tagging
+      url: /guides/kaas-cli_tagging-best-practices/
+    - title: CLI deep dive (CI upload/download)
+      url: /guides/kaas-cli-deep-dive/
+
+- title: Community
+  items:
+    - title: Telegram
+      url: https://t.me/rv_inc
+      external: true
+    - title: Discord
+      url: https://discord.gg/CurfmXNtbN
+      external: true

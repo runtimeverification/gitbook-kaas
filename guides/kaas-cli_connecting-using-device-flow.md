@@ -1,4 +1,9 @@
-# Authentification kaas-cli Using Device Flow
+---
+title: Authentication (device flow)
+description: Sign in to kaas-cli with GitHub device flow
+---
+
+# Authentication with kaas-cli (device flow)
 
 ### **Login**
 
@@ -19,15 +24,15 @@ Press Enter to continue or type 'q' to quit:
 
 Follow the link in the browser, and you will see the following window:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image.png' | relative_url }}" alt="GitHub device flow: enter code"></figure>
 
 Copy the code from the terminal and paste it into the browser. Then click "Continue." After the code is confirmed, click the "Authorize runtimeverification" button.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image%20(1).png' | relative_url }}" alt="Authorize application"></figure>
 
 You will then see the message below.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image%20(2).png' | relative_url }}" alt="Device confirmation complete"></figure>
 
 You can now return to the terminal where the `cli` is open and click "Enter." You will see this message:
 

@@ -1,124 +1,195 @@
-# Getting Started with KaaS
+---
+title: Organizations, Vaults & GitHub App
+description: KaaS web app setup, organizations, vaults, and GitHub App installation
 ---
 
-**Welcome to KaaS!**  
-This guide will help you navigate through the initial setup process, including signing up, creating your first organization, and setting up a vault. Follow these steps to get started:
+# KaaS Web: Organizations, Vaults & GitHub App
 
-## Step 1: Sign Up
+This guide describes what the [KaaS web application](https://kaas.runtimeverification.com) does today, how **organizations** and **vaults** fit together, and the **recommended GitHub App** setup for private repositories and remote compute.
 
-1. **Access the KaaS Web App:**
+---
 
-   Open your web browser and navigate to the [KaaS web application](https://kaas.runtimeverification.com).
+## What you can do in KaaS
 
-2. **Create an Account:**
+| Area | What it is | Typical use |
+|------|------------|-------------|
+| **Vaults & caches** | A vault is a workspace tied to a project (often a GitHub repo). **Caches** store versioned proof artifacts (KCFG and related outputs) with tags. | Browse results in the UI, upload/download via [`kaas-cli`]({% link overview/kaas/kaas-cli_installation.md %}). |
+| **Remote compute** | Jobs run on Runtime Verification infrastructure (e.g. Kontrol proofs, **Go/Rust fuzzing**). | Submit from the **Compute** tab or from the CLI (`kaas-cli run`, `kaas go test`). Requires a **vault spec** (`org/vault`) and **access token**. |
+| **Local / container runs** | Proof workflows on your machine or in Docker. | [`kaas-cli run`]({% link guides/kaas-cli_run_command.md %}) in `local` or `container` mode; no GitHub App required for basic local use. |
 
-   - Click on the **Login** button on the homepage.
+**GitHub integration** is **required** for KaaS to clone **private** repositories when running **remote** jobs. It is **not** required only to use the CLI to **upload or download** cached artifacts to a vault you can already access.
 
-   **Two Login Options:**
-   - **Login with Github (Recommended)**
-     - Click on the **Login with Github** button.
-     - You will be redirected to the Github login page.
-     - After logging in, you will be redirected back to KaaS Dashboard.
+---
 
-   - **Email/Password:**
-     - Fill in your details, including your email address and a secure password.
-     - Submit the form to create your account.
-     - Check your email inbox for a verification email from KaaS.
-   
-   ![Signin Page](/.gitbook/assets/SignInPage.png)  
-   *Screenshot of the sign-in page with fields for email and password.*
+## Step 1: Sign up and sign in
 
-## Step 2: Create Your First Organization
+1. Open [KaaS](https://kaas.runtimeverification.com).
+2. Choose **Login**.
+3. **Sign in with GitHub (recommended)** — you are redirected to GitHub and back to the KaaS app. This is the smoothest path if you will use the GitHub App and remote compute.
+4. **Email and password** — register, verify your email, then sign in.
 
-1. **Log In to Your Account:**
+![Signin Page]({{ '/assets/images/SignInPage.png' | relative_url }})  
+*Sign-in options on the KaaS homepage.*
 
-   Use your credentials to log in to the KaaS web app.
+---
 
-2. **Navigate to Organizations:**
-   On first login you will be presented with a blank canvas. 
+## Step 2: Recommended setup — install the GitHub App
 
-   ![Blank Canvas](/.gitbook/assets/BlankCanvas.png)
+For **private** repos and **remote** Kontrol or fuzz jobs, install Runtime Verification’s GitHub App on the GitHub **organization or user account** that owns those repositories.
 
-   If someone in your Github organization has already installed the ["Runtime Verification Inc." Github app](https://github.com/apps/runtime-verification-inc) to your organization.
-   It will already be listed on login.
+**Install the app:** [github.com/apps/runtime-verification-inc](https://github.com/apps/runtime-verification-inc)
 
-### After first login
+During installation on GitHub you will:
 
-   #### Add a Github Connected Organization.
+1. Choose which **GitHub account or organization** the app is installed on.
+2. Choose **all repositories** or only **selected** ones (you can change this later in GitHub’s app settings).
 
-   Watch a brief tutorial video adding an organization using the Github App integration feature.  
-   
-   <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/JpRDbeTHhgRqs/e' allowfullscreen></iframe>  
+After installation, return to KaaS. Newly linked installations are picked up when you open the app; if an organization does not appear yet, use **Refresh Organization List** on the Organizations page (or close and reopen the **Create Organization** / onboarding flow and complete the GitHub steps again).
 
-   {% embed url="https://app.screencast.com/JpRDbeTHhgRqs/e" %}
+**Onboarding in the app (summary):**
 
-   **Additional Notes on Github Connected Organizations:**
-   - Github integration is required for remote compute execution.
-   - Github integration is NOT required for storing kcfgs to a vault.
-   - When selecting 'Add Organization' if your organization does not show up within a few seconds, Click "Install Github App" and make sure the app is installed for the organization.
-   - If your repository is not showing up in the list of repositories, Check the to baner message and follow the instructions.
+1. From **Organizations**, choose **Get Started** or **Create Organization**.
+2. Under **GitHub Integration Options**, choose **Install GitHub App** (connect GitHub).
+3. Use **Install GitHub App** to open GitHub, complete installation, then **Continue** in the modal.
+4. When GitHub organizations are linked to your user, they appear as **GitHub organizations** in the list (see below).
 
-   **Troubleshooting Github Organization not showing:**
-   - If your organization is not showing on your hompage go back to 'Add Organization'
-     - From the Homepage. Click on 'Import from Github'. Top Right Corner of screen.
-     - Find your organization in the list and click on the link icon to the left of your organization name.
-        ![Link Organization](/.gitbook/assets/KaaS_Link_Organization_Icon.png)  
-        *Screenshot of the Link Organization Icon.*
+> **Info.** Log into the **same GitHub account** that has access to the repositories you need. The onboarding copy in the app reminds you of this before you leave for GitHub.
 
-   #### Create a Non Github Organization:
+---
 
-   - Click on the **Create New Organization** button. Top Right of screen.
-   - Enter the name of your organization. Must Start with '@'
-   - Click **Create**
+## Step 3: Organizations
 
-## Step 3: Set Up Your First Vault
+### Types of organizations
 
-1. **Access the Vaults Tab:**
+| Type | How it appears | Name pattern |
+|------|----------------|--------------|
+| **GitHub-linked** | Label: *GitHub Organization* | Matches the GitHub **login** (user or org), e.g. `mycompany`. **Does not** start with `@`. |
+| **User-managed** | Label: *User-managed Organization* | **Must start with `@`**, e.g. `@my-team`. Use this if you want an organization **without** tying it to a GitHub org first. |
 
-   Click on an Organization. Navigate to the **Vaults** tab.  
-   ![Vaults Tab](/.gitbook/assets/VaultsTab.png)   
-   *Screenshot of the Vaults tab.*
+### Managing the organization list
 
-2. **Connect a Github Repository as a KaaS Vault:**
+Open **Organizations** in the app (`/app`). You can:
 
-   - Click on the **Connect Vault** button.  
-   ![Connect Vault Button](/.gitbook/assets/KaaS_Connect_Vault_Button.png)  
-   *Screenshot of the Connect Vault Button Found under the Vaults Tab.*
-   - Select the repository you want to Connect a Vault to. And click link **Connect Icon**.  
-   ![Connect Vault Icon](/.gitbook/assets/ConnectVaultIcon.png)  
-   *Screenshot of the Connect Vault Icon.*  
-   <br>
-   <br>
+- **Search** organizations by name.
+- **Filter** by *All*, *GitHub Organizations*, or *User-managed Organizations*.
+- Switch **grid** or **list** view.
+- **Refresh** to reload organizations and GitHub installation data.
 
-   **Troubleshooting Github Repo not showing in Organization List:**  
+To add another **user-managed** organization: **Create Organization** → choose **Without GitHub Integration** → enter a name that **starts with `@`** (letters, digits, `_`, `-`, `.`).
 
-   - If your repository is not showing up in the list of repositories, Check the to banner message and follow the instructions.  
-    ![Github Repo not showing](/.gitbook/assets/AddVault_MissingGithubRepo.png)
+If you already installed the GitHub App but a GitHub org is missing, confirm the app is installed for that org on GitHub, grant access to the right repositories, then **Refresh Organization List** in KaaS.
 
+![Blank Canvas]({{ '/assets/images/BlankCanvas.png' | relative_url }})  
+*Empty state prompting you to connect GitHub or create an organization.*
 
-3. **Adding a New Vault by Connecting a Github Repository:**
+#### Tutorial video (GitHub-connected organization)
 
-   A Tutorial on adding a new Github Connected Repository as a KaaS Vault and running a Kontrol Compute Job
-   
-   <iframe scrolling='no' frameborder='0' style='width: 944px; height: 717px; border:0;' src='https://app.screencast.com/w6Bh2tD4hvu4E/e' allowfullscreen></iframe>
+[Open video on Screencast](https://app.screencast.com/JpRDbeTHhgRqs/e)
 
-   {% embed url="https://app.screencast.com/w6Bh2tD4hvu4E/e" %}
+<iframe scrolling="no" frameborder="0" style="width:100%;max-width:944px;height:717px;border:0;" src="https://app.screencast.com/JpRDbeTHhgRqs/e" allowfullscreen title="GitHub organization tutorial"></iframe>
 
-   **Adding a Non Github Connected Vault:**  
-   - From Organization > Vault Tab
-   - Click **Create Vault**
-   - Enter a Name. It must start with '@'
-   - Click **Create** button.  
+---
+
+## Step 4: Vaults
+
+A **vault** belongs to exactly one organization. The CLI and API refer to it as **`organization-name/vault-name`** (vault spec).
+
+### Opening the Vaults tab
+
+1. Click an **organization**.
+2. Open the **Vaults** tab.
+
+![Vaults Tab]({{ '/assets/images/VaultsTab.png' | relative_url }})  
+*Vaults tab inside an organization.*
+
+### Creating a vault (current UI)
+
+Use the control to **create or add a vault** (for example **Add vault** / **Create a New Vault**). A modal offers:
+
+1. **Connect GitHub Repository** (shown for **GitHub-linked** organizations)  
+   - Uses your **GitHub App** installation.  
+   - Pick from repositories the app can access (**private** and **public**).  
+   - **Best for** your own orgs/repos where the app is installed.
+
+2. **Connect Public Repository** (always available)  
+   - Enter a **public** GitHub repository URL.  
+   - **Best for** public repos that are **not** in your app installation.
+
+For **user-managed** organizations (`@my-org`), the modal only offers **Connect Public Repository** — private repos need a **GitHub-linked** organization with the GitHub App installed.
+
+### Vault naming rules (important)
+
+| Organization type | Vault name rule |
+|-------------------|-----------------|
+| **GitHub-linked** | Vault name **must start with `@`**, followed by allowed characters (letters, digits, `_`, `-`, `.`). |
+| **User-managed** (`@org`) | Vault name **must not** start with `@`; use letters, digits, `_`, `-`, `.` only. |
+
+These rules match the forms in the KaaS web app. Use the exact **`org/vault`** pair shown in the UI when you pass `--vault-spec` to the CLI.
+
+### If a repository does not appear
+
+- Confirm the **GitHub App** is installed on the correct GitHub org/user and that the repo is included (all or selected).
+- Read any **banner** at the top of the page for next steps.
+
+![Github Repo not showing]({{ '/assets/images/AddVault_MissingGithubRepo.png' | relative_url }})
+
+#### Tutorial video (vault + compute)
+
+[Open video on Screencast](https://app.screencast.com/w6Bh2tD4hvu4E/e)
+
+<iframe scrolling="no" frameborder="0" style="width:100%;max-width:944px;height:717px;border:0;" src="https://app.screencast.com/w6Bh2tD4hvu4E/e" allowfullscreen title="Vault and compute tutorial"></iframe>
+
+---
+
+## Step 5: Inside an organization
+
+Organization pages use tabs (some depend on your **plan** or **role**):
+
+| Tab | Purpose |
+|-----|---------|
+| **Overview** | Summary of the organization. |
+| **Vaults** | List vaults; open a vault for caches and settings. |
+| **Users** | Members and access. |
+| **Compute** | Remote jobs for this org (when available for your account). |
+| **Notifications** | Notification settings (eligible accounts). |
+| **Credits / Subscription / Usage** | Billing and usage (typically **admin** views). |
+
+---
+
+## Step 6: Inside a vault
+
+| Tab | Purpose |
+|-----|---------|
+| **Caches** | Versioned cached proof runs; open a cache for reports and KCFG views. |
+| **Compute** | Jobs tied to this vault (when your account has access). |
+| **Collaborators** | Who can access this vault. |
+
+---
+
+## Step 7: Access tokens (CLI and API)
+
+1. Open your **Profile** (avatar menu).
+2. Go to **Access Tokens** (or [Profile → keys](https://kaas.runtimeverification.com/app/profile#tokens)).
+3. Create a token and store it securely (e.g. `KAAS_TOKEN`).
+
+**Admin keys** (where applicable) are managed under the separate **Admin** / admin-token section of the profile ([`#admin_tokens`](https://kaas.runtimeverification.com/app/profile#admin_tokens)).
+
+For CLI usage patterns, see [Connecting using tokens]({% link guides/kaas-cli_connecting-using-tokens.md %}) and [Device flow]({% link guides/kaas-cli_connecting-using-device-flow.md %}).
+
+---
+
+## Related documentation
+
+- [KaaS CLI installation]({% link overview/kaas/kaas-cli_installation.md %})
+- [`kaas-cli run` command]({% link guides/kaas-cli_run_command.md %})
+- [Remote fuzzing]({% link guides/kaas-cli_remote_fuzzing.md %})
+- [CI / GitHub Actions]({% link guides/kaas_setting-up-ci.md %})
+- [KCFG tagging]({% link guides/kaas-cli_tagging-best-practices.md %})
+
+---
 
 ## Questions?
 
-If you have any questions or need further assistance, please refer to our support documentation or contact our support team.
 [contact@runtimeverification.com](mailto:contact@runtimeverification.com)  
-[Join our Discord](https://discord.gg/UBq4J8NE)  
-[Find us on Twitter](https://twitter.com/rv_inc)  
-
-
-# Next Steps
-[Tagging Best Practices](/guides/tagging-best-practices.md)
-
-You are now ready to start using KaaS to manage your projects efficiently. If you have any questions or need further assistance, please refer to our support documentation or contact our support team.
+[Discord](https://discord.gg/CurfmXNtbN)  
+[Telegram](https://t.me/rv_kontrol)

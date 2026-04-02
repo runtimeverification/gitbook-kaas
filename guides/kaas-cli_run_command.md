@@ -1,3 +1,8 @@
+---
+title: "`kaas-cli run` command"
+description: Local, container, and remote test execution with kaas-cli
+---
+
 # **`kaas-cli run` Command Documentation**
 
 ## **Description:**  
@@ -80,7 +85,7 @@ If your execution directory for tests are within a subdirectory, either `cd` to 
     
 - `--vault-spec, -vs`: Required in `remote` mode. Specifies the vault in `<ORG_NAME>/<VAULT_NAME>` format.
     
-- `--token, -t`: A personal access key for authentication against the remote server. If not provided, you must authenticate using [environment variables](https://docs.runtimeverification.com/kaas/guides/kaas-cli_connecting-using-tokens#authentication-using-environment-variables) or [device flow authentication](https://docs.runtimeverification.com/kaas/guides/kaas-cli_connecting-using-device-flow).
+- `--token, -t`: A personal access key for authentication against the remote server. If not provided, you must authenticate using [environment variables]({% link guides/kaas-cli_connecting-using-tokens.md %}#authentication-using-environment-variables) or [device flow authentication]({% link guides/kaas-cli_connecting-using-device-flow.md %}).
     
 - `--branch, -b`: (Optional) Specifies a Git branch for remote runs, aiding in reproducible CI/CD workflows.
     
@@ -151,4 +156,4 @@ kaas-cli run \
   --rust-fuzz-engine libfuzzer
 ```
 
-For the `kaas go test` shorthand and Go fuzzing details, see [Remote Fuzzing](/guides/kaas-cli_remote_fuzzing.md).
+For the `kaas go test` shorthand and Go fuzzing details, see [Remote Fuzzing]({% link guides/kaas-cli_remote_fuzzing.md %}).

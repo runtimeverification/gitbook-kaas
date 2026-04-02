@@ -1,5 +1,6 @@
 ---
-description: Step-by-step Guidance on Using the Tool
+title: Using KaaS CLI (tokens)
+description: Tokens, upload/download, and environment variables
 ---
 
 # Getting started
@@ -10,7 +11,7 @@ This guide provides step-by-step instructions on how to use **KaaS**. You can us
 
 ### **Login**
 
-You can refer to [kaas-cli_connecting-using-device-flow.md](/guides/kaas-cli_connecting-using-device-flow.md "mention") for the detailed guide on how to authenticate using CLI and github device flow.&#x20;
+You can refer to [Authentication (device flow)]({% link guides/kaas-cli_connecting-using-device-flow.md %}) for the detailed guide on how to authenticate using the CLI and GitHub device flow.
 
 ### **Creating and Using a Token**
 
@@ -21,12 +22,9 @@ Providing token allows you to skip authentication flow and have same level of ac
    * Click on `Profile` picture in right top corner
    * Click on the `Access Tokens` button in the drop-down menu.
    * Create a new token and copy the `Key`.
-2. **Obtain Organization Name and Vault Name:**
-   * Go to the [KaaS dashboard](https://kaas.runtimeverification.com/app).
-   * Click the desired organization.
-   * And click on a Vault.
-   * Copy the vault name with organization name. It has format:
-     * Refered to as Vault Spec: `organization-name/vault-name`
+2. **Obtain organization and vault (vault spec):**
+   * Open the [KaaS app](https://kaas.runtimeverification.com/app) and select an **organization**, then a **vault** (or read the names from the URL: `/app/organization/{org}/{vault}`).
+   * The **vault spec** passed to the CLI is always `organization-name/vault-name` (two path segments, not the optional cache tag). GitHub-linked orgs use the GitHub login as the first segment; user-managed org names include the leading `@`. See [Organizations, Vaults & GitHub App]({% link overview/kaas/kaas-web_setup.md %}) for how orgs and vaults are created.
 3. **Use the Token**:
    * Replace `xxx` with your actual token from previous steps.
    * Replace `organization-name/vault-name` with names from the previous step
@@ -43,9 +41,7 @@ Providing token allows you to skip authentication flow and have same level of ac
        ```
 
 
-{% hint style="info" %}
-Use the command `kaas-cli upload --help` and `kaas-cli download --help` to see all available flags.
-{% endhint %}
+> **Info.** Use `kaas-cli upload --help` and `kaas-cli download --help` to see all available flags.
 
 
 # Authentication Using Environment Variables

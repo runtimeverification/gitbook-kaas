@@ -1,10 +1,11 @@
 ---
-description: Best Practices for Tagging KCFG Files
+title: KCFG tagging
+description: Tags, list-caches, download, and the web UI
 ---
 
 # KCFG Tagging Best Practices
 
-After successfully [setting up and logging into the CLI](/guides/kaas-cli_connecting-using-tokens.md), you can view and download all previous versions of artifacts.&#x20;
+After successfully [setting up and logging into the CLI]({% link guides/kaas-cli_connecting-using-tokens.md %}), you can view and download all previous versions of artifacts.
 
 ### CLI
 
@@ -28,15 +29,15 @@ kaas-cli download <ORG_NAME>/<VAULT_NAME>:<TAG>
 
 The webpage provides a list of available versions. To access this information, navigate to your "Dashboard" and click the eye button next to your preferred project.
 
-<figure><img src="/.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image%20(5).png' | relative_url }}" alt="Dashboard cache list"></figure>
 
 You will be redirected to a page with all available caches within the vault.
 
-<figure><img src="/.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image%20(7).png' | relative_url }}" alt="Caches in vault"></figure>
 
 Click the "Download" button to see the CLI command or download it in the browser.
 
-<figure><img src="/.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/assets/images/image%20(12).png' | relative_url }}" alt="Download option"></figure>
 
 ## Options for Tagging
 

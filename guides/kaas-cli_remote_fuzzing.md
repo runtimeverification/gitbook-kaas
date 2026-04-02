@@ -1,3 +1,8 @@
+---
+title: Remote fuzzing
+description: kaas go test and kaas-cli run for Go and Rust fuzzing on KaaS
+---
+
 # Remote Fuzzing on KaaS
 
 KaaS supports remote fuzzing for **Go** and **Rust** projects. Fuzz jobs run on cloud compute infrastructure, allowing long-duration fuzzing without blocking your local machine.
@@ -8,7 +13,7 @@ Each fuzz target is submitted as a separate remote job, with up to 5 targets per
 
 - `kaas-cli` installed (`pip install kaas-cli`)
 - A valid KaaS token ([create one here](https://kaas.runtimeverification.com/app/profile/keys))
-- A vault connected to your GitHub repository ([setup guide](/overview/kaas/kaas-web_setup.md))
+- A vault connected to your GitHub repository ([setup guide]({% link overview/kaas/kaas-web_setup.md %}))
 
 ## `kaas go test` Command
 
@@ -34,7 +39,7 @@ kaas go test -fuzz='^FuzzTransfer$,^FuzzMint$' ./path/to/pkg/
 |------|-------------|---------|
 | `--fuzz`, `-fuzz` | Comma-separated fuzz target patterns (required) | — |
 | `--commit` | Pin a specific git commit hash | HEAD |
-| `--fuzztime` | Go-style duration (`'30s'`, `'5m'`, `'1h'`), converted to execution timeout | — |
+| `--fuzztime` | Go-style duration of at least `1m` (`'1m'`, `'5m'`, `'1h'`), converted to execution timeout | — |
 | `--execution-timeout` | Execution timeout in minutes (mutually exclusive with `--fuzztime`) | 480 |
 | `--vault-spec`, `-vs` | Vault specification in `org/vault` format | from config |
 | `--token`, `-t` | Personal access key | from config |
@@ -44,9 +49,7 @@ kaas go test -fuzz='^FuzzTransfer$,^FuzzMint$' ./path/to/pkg/
 | `--url`, `-u` | Server URL | `https://kaas.runtimeverification.com/` |
 | `--watch`, `-w` | Watch job execution status | `false` |
 
-{% hint style="info" %}
-`--fuzztime` and `--execution-timeout` are mutually exclusive. Use `--fuzztime` for Go-style durations (e.g. `5m`) or `--execution-timeout` for raw minutes.
-{% endhint %}
+> **Info.** `--fuzztime` and `--execution-timeout` are mutually exclusive. Use `--fuzztime` for Go-style durations of at least `1m` (e.g. `5m`) or `--execution-timeout` for raw minutes.
 
 ### Example with All Options
 
@@ -126,9 +129,7 @@ go_build_directory = "./..."
 execution_timeout = 480
 ```
 
-{% hint style="warning" %}
-The `.kaas-cli.toml` file contains your API token. It is automatically added to `.gitignore` to prevent accidental commits.
-{% endhint %}
+> **Warning.** The `.kaas-cli.toml` file contains your API token. It is automatically added to `.gitignore` to prevent accidental commits.
 
 ## Viewing Results
 

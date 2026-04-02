@@ -1,3 +1,8 @@
+---
+title: AI agent setup
+description: AGENTS.md, CLAUDE.md, and ChatGPT for KAAS fuzzing
+---
+
 # AI Agent Setup for KAAS Fuzzing
 
 KAAS ships a knowledge file that teaches AI coding assistants how to write fuzz tests and submit them to KAAS. This guide explains how to install it for your preferred tool.
@@ -25,35 +30,7 @@ Or copy it manually from the [gitbook-kaas repository](https://github.com/runtim
 
 The file is picked up automatically — no additional configuration needed.
 
-## Option 2: Cursor Skills
-
-Cursor supports project-level and personal skills via `.cursor/skills/` directories.
-
-**Project-level (shared with your team via git):**
-
-```bash
-mkdir -p .cursor/skills/kaas-fuzzing
-curl -o .cursor/skills/kaas-fuzzing/SKILL.md \
-  https://raw.githubusercontent.com/runtimeverification/gitbook-kaas/main/.cursor/skills/kaas-fuzzing/SKILL.md
-curl -o .cursor/skills/kaas-fuzzing/api-reference.md \
-  https://raw.githubusercontent.com/runtimeverification/gitbook-kaas/main/.cursor/skills/kaas-fuzzing/api-reference.md
-```
-
-**Personal (available across all your projects):**
-
-```bash
-mkdir -p ~/.cursor/skills/kaas-fuzzing
-curl -o ~/.cursor/skills/kaas-fuzzing/SKILL.md \
-  https://raw.githubusercontent.com/runtimeverification/gitbook-kaas/main/.cursor/skills/kaas-fuzzing/SKILL.md
-curl -o ~/.cursor/skills/kaas-fuzzing/api-reference.md \
-  https://raw.githubusercontent.com/runtimeverification/gitbook-kaas/main/.cursor/skills/kaas-fuzzing/api-reference.md
-```
-
-{% hint style="warning" %}
-Do **not** place skills in `~/.cursor/skills-cursor/` — that directory is reserved for Cursor's internal built-in skills.
-{% endhint %}
-
-## Option 3: Claude Code (CLAUDE.md)
+## Option 2: Claude Code (CLAUDE.md)
 
 Claude Code loads `CLAUDE.md` files automatically from your project root or `~/.claude/CLAUDE.md` for global preferences.
 
@@ -71,27 +48,24 @@ curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/runtimeverificatio
 
 If you already have a `CLAUDE.md`, append the KAAS content or use `@import` to reference it.
 
-## Option 4: ChatGPT (Custom GPT / Projects)
+## Option 3: ChatGPT (Custom GPT / Projects)
 
-ChatGPT supports knowledge files through Custom GPTs and Projects. Since there's no filesystem integration, you upload the knowledge file manually.
+ChatGPT supports knowledge files through Custom GPTs and Projects. Since there's no filesystem integration, you upload the knowledge file manually. Use `AGENTS.md` from gitbook-kaas — it is the same canonical content as for other agents.
 
 **Using ChatGPT Projects:**
 
 1. Open [ChatGPT](https://chatgpt.com) and go to **Projects**
 2. Create or open a project
-3. Click **Add files** and upload the `SKILL.md` file from [gitbook-kaas](https://github.com/runtimeverification/gitbook-kaas/blob/main/.cursor/skills/kaas-fuzzing/SKILL.md)
-4. Optionally upload `api-reference.md` for the full API details
-5. Add a custom instruction: *"Refer to the KAAS fuzzing knowledge file when helping with fuzz testing or KAAS CLI usage."*
+3. Click **Add files** and upload `AGENTS.md` from [gitbook-kaas](https://github.com/runtimeverification/gitbook-kaas/blob/main/AGENTS.md)
+4. Add a custom instruction: *"Refer to the KAAS fuzzing knowledge file when helping with fuzz testing or KAAS CLI usage."*
 
 **Using a Custom GPT:**
 
 1. Go to **Explore GPTs** → **Create**
-2. In the **Knowledge** section, upload `SKILL.md` and `api-reference.md`
-3. In **Instructions**, add: *"You are a KAAS fuzzing assistant. Use the uploaded knowledge files to help users write fuzz tests and run them on KAAS infrastructure."*
+2. In the **Knowledge** section, upload `AGENTS.md`
+3. In **Instructions**, add: *"You are a KAAS fuzzing assistant. Use the uploaded knowledge file to help users write fuzz tests and run them on KAAS infrastructure."*
 
-{% hint style="info" %}
-Custom GPTs require a ChatGPT Plus, Team, or Enterprise subscription.
-{% endhint %}
+> **Info.** Custom GPTs require a ChatGPT Plus, Team, or Enterprise subscription.
 
 ## Verifying Installation
 
