@@ -11,7 +11,7 @@ Each fuzz target is submitted as a separate remote job, with up to 5 targets per
 
 ## Prerequisites
 
-- `kaas-cli` installed (`pip install kaas-cli`)
+- **`kaas-cli`** installed (`pip install kaas-cli` or `uv pip install kaas-cli`). The same package provides both the **`kaas-cli`** command and the **`kaas`** command group (e.g. `kaas go test`); you do not install them separately.
 - A valid KaaS token ([create one here](https://kaas.runtimeverification.com/app/profile/keys))
 - A vault connected to your GitHub repository ([setup guide]({% link overview/kaas/kaas-web_setup.md %}))
 
@@ -49,7 +49,9 @@ kaas go test -fuzz='^FuzzTransfer$,^FuzzMint$' ./path/to/pkg/
 | `--url`, `-u` | Server URL | `https://kaas.runtimeverification.com/` |
 | `--watch`, `-w` | Watch job execution status | `false` |
 
-> **Info.** `--fuzztime` and `--execution-timeout` are mutually exclusive. Use `--fuzztime` for Go-style durations of at least `1m` (e.g. `5m`) or `--execution-timeout` for raw minutes.
+> **Info.** **`-fuzz` and `--fuzz` are equivalent** (short and long flag for the same option), matching Go’s usual `-flag` style and Click’s long options. Examples below use `-fuzz`; either form works.
+>
+> **`--fuzztime` and `--execution-timeout` are mutually exclusive.** Use `--fuzztime` for Go-style durations of at least `1m` (e.g. `5m`) or `--execution-timeout` for raw minutes.
 
 ### Example with All Options
 

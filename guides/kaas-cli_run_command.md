@@ -17,11 +17,12 @@ OR
 - Docker must be installed locally. See [Docker documentation](https://docs.docker.com/get-docker/) for installation instructions.
 
 **For Kontrol/Forge modes:**
-- You must have at minimum a `foundry.toml` file at the root of you TEST directory.
+- You must have at minimum a `foundry.toml` file at the root of your test directory.
 - A `kontrol.toml` file is optional, but if present, it will be used to run the tests using specific configuration options passed to kontrol. 
 
-**For Go/Rust fuzzing modes:**
-- A valid vault specification, token, and branch are required (remote only).
+**For Go/Rust fuzzing modes (remote only):**
+- A valid **vault specification** and **token** are required.
+- **`--branch`** is optional and defaults to `main` when omitted (same as other remote job types).
 - Go fuzz tests must follow Go's `testing.F` convention (`FuzzXxx(f *testing.F)`).
 - Rust fuzz tests require `cargo-fuzz` with a supported engine (libfuzzer, afl, hongfuzz).
 
@@ -63,11 +64,11 @@ If your execution directory for tests are within a subdirectory, either `cd` to 
 
 **Key Options:**
 
-- `--mode, -m`: Specifies the execution mode. Accepted values are `local`, `remote`, or `container`.
+- `--mode, -m`: Specifies the execution mode. Accepted values are `local`, `remote`, or `container`. Behavior depends on `--test-mode` (default `kontrol`).
     
-    - **local**: Runs Kontrol proofs directly on the host machine. Requires Kontrol to be installed locally, see [Kontrol documentation](https://docs.runtimeverification.com/kontrol/overview/readme/installations) for installation instructions.
-    - **container**: Executes proofs inside a Docker container on the host machine, ensuring a consistent and isolated environment.
-    - **remote**: Submits proofs to KaaS remote compute infrastructure, requiring authentication and a valid vault specification.
+    - **local**: Runs tests on the host machine. For `--test-mode kontrol`, Kontrol must be installed locally; see [Kontrol documentation](https://docs.runtimeverification.com/kontrol/overview/readme/installations).
+    - **container**: Runs tests inside a Docker container on the host for a consistent environment (Kontrol in the image for kontrol mode, Foundry image for forge mode, etc.).
+    - **remote**: Runs tests on KaaS remote infrastructure; requires authentication and a valid vault specification (`--vault-spec`, `--token`).
 
 - `--test-mode, -tm`: Specifies the test runtime. Accepted values are `kontrol`, `forge`, `go`, `rust`. Default is `kontrol`.
     
@@ -101,13 +102,13 @@ If your execution directory for tests are within a subdirectory, either `cd` to 
 ## **Execution Flow:**
 
 1. **Local Mode:**  
-    Calls `kontrol build` and `kontrol prove` directly on the host. Kontrol must be installed beforehand. If Kontrol is not found, the CLI will provide installation guidance ([Kontrol Documentation]( https://docs.runtimeverification.com/kontrol/overview/readme/installations)).
+    For **`--test-mode kontrol`**, calls `kontrol build` and `kontrol prove` on the host (Kontrol must be installed). For **`forge`**, runs Foundry tests locally. If Kontrol is not found in kontrol mode, the CLI surfaces installation guidance ([Kontrol documentation](https://docs.runtimeverification.com/kontrol/overview/readme/installations)).
     
 2. **Container Mode:**  
-    Runs on the host machine. Uses a Docker container to run `kontrol build` and `kontrol prove`. This ensures an isolated environment with Kontrol installed without modifying the host system.
+    Runs the selected test mode inside Docker on the host (e.g. Kontrol or Foundry in the configured image) without changing the host install.
     
 3. **Remote Mode:**  
-    Uses KaasClient to run proofs on the remote KaaS infrastructure. Requires `--vault-spec` and `--token`. If `--watch` is set, the CLI monitors the job until completion. For Go and Rust fuzzing modes, the CLI checks available fuzzing capacity before submitting jobs.
+    Submits work to KaaS. Requires `--vault-spec` and `--token`. If `--watch` is set, the CLI waits for completion where supported. For **Go** and **Rust** fuzzing, the CLI checks fuzzing capacity before submitting jobs.
     
 
 ## **Error Handling and Output:**

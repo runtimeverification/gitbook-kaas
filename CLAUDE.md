@@ -23,7 +23,7 @@ kaas go test -fuzz='^FuzzTarget$' ./path/to/pkg/
 kaas go test -fuzz='^FuzzA$,^FuzzB$' ./pkg/  # multiple targets, separate jobs
 ```
 
-Flags: `--commit`, `--fuzztime` (Go duration), `--execution-timeout` (minutes, default 480), `--vault-spec`, `--token`, `--branch`, `--go-version`, `--go-build-directory`.
+Flags: `--commit`, `-fuzz`/`--fuzz` (same option), `--fuzztime` (Go duration), `--execution-timeout` (minutes, default 480), `--vault-spec`, `--token`, `--branch`, `--go-version`, `--go-build-directory`.
 
 ### `kaas-cli run` (Go and Rust)
 

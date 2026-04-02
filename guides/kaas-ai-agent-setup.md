@@ -73,4 +73,4 @@ After installation, test that your AI agent has the knowledge by asking:
 
 > "How do I run a Go fuzz test on KAAS?"
 
-It should know about `kaas go test`, the `--fuzz` flag, vault specs, `.kaas-cli.toml` configuration, and the KAAS API.
+It should know about `kaas go test`, the **`-fuzz` / `--fuzz`** flag, vault specs, `.kaas-cli.toml` configuration, and the KAAS API.

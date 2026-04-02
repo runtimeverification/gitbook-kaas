@@ -29,7 +29,10 @@ func FuzzParseMessage(f *testing.F) {
         if err != nil {
             t.Fatalf("re-encode failed: %v", err)
         }
-        msg2, _ := ParseMessage(encoded)
+        msg2, err := ParseMessage(encoded)
+        if err != nil {
+            t.Fatalf("parse re-encoded message failed: %v", err)
+        }
         if !msg.Equal(msg2) {
             t.Fatal("roundtrip mismatch")
         }
@@ -105,6 +108,8 @@ Auto-added to `.gitignore`. CLI flags override config values.
 | POST | `/api/jobs/{jobId}/cancel` | Cancel a job |
 
 Auth: Bearer token in `Authorization` header.
+
+**Job `kind` vs CLI:** Remote Forge jobs use API `kind: "foundry"` (Foundry/Forge test suite). That corresponds to **`kaas-cli run --test-mode forge`** — the string `forge` is the CLI test mode name; the API payload uses `foundry`.
 
 ### Go Job Payload
 
