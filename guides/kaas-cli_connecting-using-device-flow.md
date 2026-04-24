@@ -1,4 +1,9 @@
-# Authentification kaas-cli Using Device Flow
+---
+title: Authentication (device flow)
+description: Sign in to kaas-cli with GitHub device flow
+---
+
+# Authentication with kaas-cli (device flow)
 
 ### **Login**
 
@@ -17,17 +22,9 @@ Then hit 'Enter'.
 Press Enter to continue or type 'q' to quit: 
 ```
 
-Follow the link in the browser, and you will see the following window:
+Follow the link in the browser. On GitHub’s **device activation** page, paste the user code from the terminal, choose **Continue**, then approve the **runtimeverification** OAuth application when prompted (**Authorize runtimeverification** or equivalent).
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-
-Copy the code from the terminal and paste it into the browser. Then click "Continue." After the code is confirmed, click the "Authorize runtimeverification" button.
-
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-You will then see the message below.
-
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+When activation succeeds, GitHub shows a short confirmation that the device is connected and you can close the browser tab.
 
 You can now return to the terminal where the `cli` is open and click "Enter." You will see this message:
 

@@ -1,10 +1,15 @@
+---
+title: CLI deep dive (CI upload/download)
+description: Upload and download proofs with kaas-cli in CI
+---
+
 # Using KaaS CLI
 
 This guide will walk you through setting up your CI to upload and download proofs using the **`kaas-cli`** tool.
 
 Once set up in your CI pipeline, new proofs will be uploaded automatically with each build, and the latest set of proofs will be downloaded for use in your verification jobs.
 
-First, make sure you have **`kaas-cli`** installed. You can find instructions here: [kaas-cli_installation.md](/overview/kaas/kaas-cli_installation.md "mention").&#x20;
+First, make sure you have **`kaas-cli`** installed. See [KaaS CLI installation]({% link overview/kaas/kaas-cli_installation.md %}).
 
 ### Know Your Vault Name
 
@@ -39,9 +44,7 @@ kaas-cli upload -d ./kout
 kaas-cli download -d ./kout
 ```
 
-{% hint style="info" %}
-Specifying a subdirectory is optional.
-{% endhint %}
+> **Info.** Specifying a subdirectory is optional.
 
 ### Authentication
 
@@ -52,11 +55,7 @@ To verify authentication is working before uploading/downloading you can run the
 kaas-cli check-auth
 ```
 
-{% hint style="success" %}
-Confirm the message:&#x20;
-
-`You are currently authenticated.`
-{% endhint %}
+> **Success.** You should see: `You are currently authenticated.`
 
 ### Tips:
 

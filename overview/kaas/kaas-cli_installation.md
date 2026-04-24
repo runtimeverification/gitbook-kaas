@@ -1,3 +1,8 @@
+---
+title: KaaS CLI Installation
+description: Install kaas-cli and local requirements
+---
+
 # KaaS CLI Tool Installation
 
 Follow these step-by-step instructions to set up **KaaS** components, which include the web interface and command-line interface (CLI) tool.

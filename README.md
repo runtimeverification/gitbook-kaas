@@ -1,21 +1,34 @@
----
-description: Revolutionize your K framework experience
----
-### Get Started Here
+# KaaS documentation (source)
 
-# KaaS
+User-facing documentation for [KaaS](https://kaas.runtimeverification.com), published as a static site with **Jekyll** and **GitHub Pages**.
 
-Introducing **KaaS** (**K** as a Service), a cloud-based solution designed to enhance the [**K** framework](https://kframework.org/) experience. **KaaS** is engineered to introduce new features, streamline operations, and foster collaboration among teams. By leveraging caching proofs and remote computation, it eliminates redundant processes, saving your team precious time.
+## Local preview
 
-**KaaS** integrates seamlessly with continuous integration (CI) systems, allowing developers to pull the latest cached results and bypass repetitive computations. It's a perfect solution for internal teams, centralizing shared computational results for improved collaboration.
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-For data management, **KaaS** employs reliable and secure storage. User access is protected through unique project keys, ensuring your data's safety. Additionally, **KaaS** provides a robust Command Line Interface (CLI) with commands for efficient cache management, remote and local proof execution for user sessions.
+Open <http://localhost:4000>. If you use a non-empty `baseurl` (project Pages URL), run:
 
-Cloud Compute: KaaS takes advantage of cloud computing to provide scalable and efficient remote computation. This allows users to offload heavy computational tasks to the cloud. The integration with cloud computing services makes KaaS a powerful tool for large-scale computations with the K framework.
+```bash
+bundle exec jekyll serve --baseurl /your-repo-name
+```
 
-With **KaaS**, our vision is to make the **K** framework more accessible to users, serving as the perfect entry point for anyone looking to leverage the power of the **K** framework
+## GitHub Pages
 
-# Next Steps
+1. Repository **Settings** → **Pages** → **Build and deployment**: source **GitHub Actions**.
+2. Push to `main`; the workflow [`.github/workflows/jekyll-gh-pages.yml`](.github/workflows/jekyll-gh-pages.yml) builds and deploys the `jekyll build` output.
+3. Optional: set a **custom domain** (e.g. `docs.kaas.runtimeverification.com`) in Pages settings and add the DNS records GitHub shows.
 
-- [KaaS Web Setup](/overview/kaas/kaas-web_setup.md)
-- [KaaS CLI Tool Installation](/overview/kaas/kaas-cli_installation.md)
+`jekyll build --baseurl` is supplied automatically in CI so the site works both at `https://<org>.github.io/<repo>/` and behind a custom domain (with `baseurl` empty in `_config.yml` once the domain is configured—GitHub still passes the correct base path for subdirectory installs).
+
+## Content
+
+- Markdown pages live under [`guides/`](guides/) and [`overview/kaas/`](overview/kaas/).
+- Navigation is [`_data/nav.yml`](_data/nav.yml).
+- `AGENTS.md` / `CLAUDE.md` are for AI assistants and are **not** published on the site (see `_config.yml` `exclude`).
+
+### Images
+
+Screenshots previously referenced as `/.gitbook/assets/...` should be placed under `assets/images/` (same filenames). Add files there to fix broken images until they are migrated.

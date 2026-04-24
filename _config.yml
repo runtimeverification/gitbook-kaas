@@ -1,0 +1,32 @@
+title: KaaS Documentation
+description: K as a Service — user documentation
+url: "" # optional; set in GitHub repo Settings → Pages → Custom domain (e.g. https://docs.kaas.runtimeverification.com)
+
+# Overridden in CI via: jekyll build --baseurl "<base_path>"
+# For a project site without custom domain, GitHub supplies the repo base path (e.g. /gitbook-kaas).
+baseurl: ""
+
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - SUMMARY.md
+  - AGENTS.md
+  - CLAUDE.md
+  - vendor
+  - "*.code-workspace"
+  - ".git"
+  - ".github"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

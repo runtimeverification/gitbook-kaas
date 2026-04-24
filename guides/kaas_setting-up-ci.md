@@ -1,4 +1,9 @@
-# Basic Github Workflow Setup for KaaS
+---
+title: KaaS in CI
+description: Example GitHub Actions workflow for KaaS
+---
+
+# Basic GitHub workflow setup for KaaS
 
 ```YAML
 ---
@@ -39,7 +44,7 @@
 
         # This mode will run proofs on Runtime Verification Servers using dedicated hardware built for proof execution.
         # A kontrol.toml and foundry.tom file are still requried to be present in the root of the test directory.
-        # Github App installation of "KaaS Storage & Compute" is required to use this mode to support access to test source code.
+        # GitHub App installation (Runtime Verification app: https://github.com/apps/runtime-verification-inc) is required for remote mode so KaaS can clone private repository source.
         - name: 'Run KaaS in Remote Mode'
           shell: bash
           run: |
