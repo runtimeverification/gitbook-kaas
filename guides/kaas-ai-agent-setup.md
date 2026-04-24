@@ -1,22 +1,24 @@
 ---
 title: AI agent setup
-description: AGENTS.md, CLAUDE.md, and ChatGPT for KAAS fuzzing
+description: AGENTS.md, CLAUDE.md, and other tools for KAAS fuzzing
 ---
 
 # AI Agent Setup for KAAS Fuzzing
 
-KAAS ships a knowledge file that teaches AI coding assistants how to write fuzz tests and submit them to KAAS. This guide explains how to install it for your preferred tool.
+KAAS publishes **tool-agnostic** knowledge at the root of the [gitbook-kaas](https://github.com/runtimeverification/gitbook-kaas) repository so you can use the same material with **Cursor**, **Claude Code**, **GitHub Copilot**, **Codex**, **ChatGPT** (Projects / Custom GPTs), and other assistants that load project instructions or uploaded files.
 
-The knowledge file covers:
+This guide explains how to wire that content into your workflow. The canonical copies live as **`AGENTS.md`** (widely supported) and **`CLAUDE.md`** (Claude-specific). Treat those files as the source of truth; any IDE-specific layout under `.cursor/` or similar in a fork is an **optional supplement**, not a different product contract.
+
+The knowledge covers:
 - When and why to write fuzz tests
 - Go and Rust fuzz test patterns
 - Using the `kaas-cli` and `kaas go test` commands
 - KAAS API endpoints for programmatic access
 - `.kaas-cli.toml` configuration
 
-## Option 1: AGENTS.md (Universal — All Tools)
+## Option 1: AGENTS.md (recommended baseline)
 
-`AGENTS.md` is an open standard recognized by Cursor, Claude Code, GitHub Copilot, Codex, and most AI coding agents. Place it in your project root and it will be loaded automatically.
+`AGENTS.md` is recognized by Cursor, Claude Code, GitHub Copilot, Codex, and many other agents. Place it in your project root so the tool can load it automatically.
 
 **Install:**
 
@@ -48,7 +50,11 @@ curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/runtimeverificatio
 
 If you already have a `CLAUDE.md`, append the KAAS content or use `@import` to reference it.
 
-## Option 3: ChatGPT (Custom GPT / Projects)
+## Option 3: IDE- or vendor-specific folders (optional)
+
+Some products also read instructions from paths like `.cursor/rules/` or `.cursor/skills/`. If your team maintains such files, keep them aligned with **`AGENTS.md`** / **`CLAUDE.md`** so every agent sees the same flags, defaults, and API notes. You do **not** need a particular IDE to use KAAS fuzzing documentation—start from the root files above.
+
+## Option 4: ChatGPT (Custom GPT / Projects)
 
 ChatGPT supports knowledge files through Custom GPTs and Projects. Since there's no filesystem integration, you upload the knowledge file manually. Use `AGENTS.md` from gitbook-kaas — it is the same canonical content as for other agents.
 

@@ -28,8 +28,7 @@ This guide describes what the [KaaS web application](https://kaas.runtimeverific
 3. **Sign in with GitHub (recommended)** — you are redirected to GitHub and back to the KaaS app. This is the smoothest path if you will use the GitHub App and remote compute.
 4. **Email and password** — register, verify your email, then sign in.
 
-![Signin Page]({{ '/assets/images/SignInPage.png' | relative_url }})  
-*Sign-in options on the KaaS homepage.*
+*Sign-in options on the KaaS homepage: **Login**, then **Sign in with GitHub** or email/password as described above.*
 
 ---
 
@@ -79,8 +78,7 @@ To add another **user-managed** organization: **Create Organization** → choose
 
 If you already installed the GitHub App but a GitHub org is missing, confirm the app is installed for that org on GitHub, grant access to the right repositories, then **Refresh Organization List** in KaaS.
 
-![Blank Canvas]({{ '/assets/images/BlankCanvas.png' | relative_url }})  
-*Empty state prompting you to connect GitHub or create an organization.*
+*Organizations list empty state: prompts you to connect GitHub or create an organization.*
 
 #### Tutorial video (GitHub-connected organization)
 
@@ -99,8 +97,7 @@ A **vault** belongs to exactly one organization. The CLI and API refer to it as 
 1. Click an **organization**.
 2. Open the **Vaults** tab.
 
-![Vaults Tab]({{ '/assets/images/VaultsTab.png' | relative_url }})  
-*Vaults tab inside an organization.*
+*Inside an organization, open the **Vaults** tab to see vaults for that org.*
 
 ### Creating a vault (current UI)
 
@@ -131,7 +128,7 @@ These rules match the forms in the KaaS web app. Use the exact **`org/vault`** p
 - Confirm the **GitHub App** is installed on the correct GitHub org/user and that the repo is included (all or selected).
 - Read any **banner** at the top of the page for next steps.
 
-![Github Repo not showing]({{ '/assets/images/AddVault_MissingGithubRepo.png' | relative_url }})
+*If a repository is missing from the picker, check the GitHub App installation and repository access; the UI may show a banner with next steps.*
 
 #### Tutorial video (vault + compute)
 

@@ -4,9 +4,9 @@ description: K as a Service — documentation home
 permalink: /
 ---
 
-### Get started
-
 # KaaS
+
+## Get started
 
 Introducing **KaaS** (**K** as a Service), a cloud-based solution designed to enhance the [**K** framework](https://kframework.org/) experience. **KaaS** is engineered to introduce new features, streamline operations, and foster collaboration among teams. By leveraging caching proofs and remote computation, it eliminates redundant processes, saving your team precious time.
 

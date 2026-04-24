@@ -29,15 +29,15 @@ kaas-cli download <ORG_NAME>/<VAULT_NAME>:<TAG>
 
 The webpage provides a list of available versions. To access this information, navigate to your "Dashboard" and click the eye button next to your preferred project.
 
-<figure><img src="{{ '/assets/images/image%20(5).png' | relative_url }}" alt="Dashboard cache list"></figure>
+*In the Dashboard, open a project and use the **eye** icon next to it to see the list of cached versions for that vault.*
 
 You will be redirected to a page with all available caches within the vault.
 
-<figure><img src="{{ '/assets/images/image%20(7).png' | relative_url }}" alt="Caches in vault"></figure>
+*That page lists each tagged cache; pick the version you need.*
 
-Click the "Download" button to see the CLI command or download it in the browser.
+Click the **Download** button to copy the suggested `kaas-cli download …` command or download the artifact in the browser.
 
-<figure><img src="{{ '/assets/images/image%20(12).png' | relative_url }}" alt="Download option"></figure>
+*The download control shows the CLI command and any in-browser download option.*
 
 ## Options for Tagging
 
