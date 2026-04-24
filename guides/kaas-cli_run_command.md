@@ -31,7 +31,7 @@ OR
 `kaas-cli run` supports the following test modes via `--test-mode`:
 
 - **kontrol** (default): local, container, or remote execution
-- **forge**: local or container execution
+- **forge**: local or container execution only (**remote `forge` is not implemented** in the CLI; managed CI may still run **`--mode container --test-mode forge`** on KaaS workers). See [Foundry (`forge test`) with kaas-cli]({% link guides/kaas-cli_forge_test.md %}).
 - **go**: remote execution only — runs Go fuzz tests
 - **rust**: remote execution only — runs Rust fuzz tests
 
@@ -158,3 +158,5 @@ kaas-cli run \
 ```
 
 For the `kaas go test` shorthand and Go fuzzing details, see [Remote Fuzzing]({% link guides/kaas-cli_remote_fuzzing.md %}).
+
+For **`forge build` / `forge test`**, flags, Docker image selection, and **`foundry_test_report.json`**, see [Foundry (`forge test`) with kaas-cli]({% link guides/kaas-cli_forge_test.md %}).

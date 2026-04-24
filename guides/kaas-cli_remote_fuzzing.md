@@ -46,6 +46,7 @@ kaas go test -fuzz='^FuzzTransfer$,^FuzzMint$' ./path/to/pkg/
 | `--branch`, `-b` | Repository branch | `main` |
 | `--go-version` | Go version | `latest` |
 | `--go-build-directory` | Go build directory/pattern | `./...` |
+| `--go-module-root` | Repo-relative directory containing `go.mod` (e.g. `src` for `golang/go`); optional, matches web **Go Module Root** | — |
 | `--url`, `-u` | Server URL | `https://kaas.runtimeverification.com/` |
 | `--watch`, `-w` | Watch job execution status | `false` |
 
@@ -67,11 +68,15 @@ kaas go test \
   --go-version 1.23.8
 ```
 
+For a **`golang/go`** checkout, the main module is under **`src/`**. Use **`--go-module-root src`** and paths **relative to `src/`** for **`./pkg/parser`** and **`--go-build-directory`** (e.g. **`./html/template`**, not **`./src/html/template`**).
+
 ## `kaas-cli run` with Go/Rust Fuzzing
 
 For more explicit control or Rust fuzzing, use the full `kaas-cli run` command.
 
 ### Go Fuzzing
+
+`kaas-cli run` uses **`--test-root`** / **`-tr`** for the package path (relative to the repository root), **`--fuzz-targets`** (comma-separated, up to five remote jobs per invocation), and **`--execution-timeout`** in **minutes** (there is no `--fuzztime` on this command; use `kaas go test` if you prefer Go-style durations).
 
 ```bash
 kaas-cli run \
@@ -80,9 +85,11 @@ kaas-cli run \
   --vault-spec org/vault \
   --token "$KAAS_TOKEN" \
   --branch main \
+  --test-root ./pkg/parser \
   --fuzz-targets "^FuzzTransfer$,^FuzzMint$" \
   --go-version 1.23.8 \
-  --go-build-directory "./..."
+  --go-build-directory "./pkg/parser" \
+  --execution-timeout 120
 ```
 
 ### Rust Fuzzing
@@ -128,6 +135,7 @@ url = "https://kaas.runtimeverification.com/"
 [go]
 go_version = "latest"
 go_build_directory = "./..."
+go_module_root = "" # optional, e.g. "src" for golang/go
 execution_timeout = 480
 ```
 

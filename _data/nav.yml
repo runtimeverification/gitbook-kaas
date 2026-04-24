@@ -15,6 +15,8 @@
       url: /guides/kaas-cli_connecting-using-device-flow/
     - title: "`run` command"
       url: /guides/kaas-cli_run_command/
+    - title: Foundry (`forge test`)
+      url: /guides/kaas-cli_forge_test/
     - title: Remote fuzzing
       url: /guides/kaas-cli_remote_fuzzing/
     - title: AI agent setup
